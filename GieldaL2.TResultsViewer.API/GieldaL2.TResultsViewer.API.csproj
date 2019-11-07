@@ -14,4 +14,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GieldaL2.TResultsViewer.DB\GieldaL2.TResultsViewer.DB.csproj" />
+  </ItemGroup>
+
 </Project>
