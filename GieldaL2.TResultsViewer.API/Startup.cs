@@ -28,8 +28,12 @@ namespace GieldaL2.TResultsViewer.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<GieldaL2TesterContext>(options =>
-options.UseSqlServer(Configuration.GetConnectionString("GieldaL2TesterContext")));
+            services.AddDbContext<GieldaL2TesterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("GieldaL2TesterContext")));
+            services.AddCors(action => action.AddPolicy("newpolicy", builder => builder
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowAnyOrigin()
+            .AllowCredentials()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
