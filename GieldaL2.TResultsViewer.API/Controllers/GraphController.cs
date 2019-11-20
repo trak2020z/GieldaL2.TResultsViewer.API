@@ -11,12 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace GieldaL2.TResultsViewer.API.Controllers
 {
     [Route("api/[controller]")]
-    [EnableCors("newpolicy")]
     [ApiController]
     public class GraphController : ControllerBase
     {
         [HttpGet]
-        [Route("last")]
         public GraphsDTO Get()
         {
             return GraphService.GetData();

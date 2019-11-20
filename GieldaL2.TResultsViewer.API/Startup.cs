@@ -29,7 +29,7 @@ namespace GieldaL2.TResultsViewer.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<GieldaL2TesterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("GieldaL2TesterContext")));
-            services.AddCors(action => action.AddPolicy("newpolicy", builder => builder
+            services.AddCors(action => action.AddPolicy("CorsPolicy", builder => builder
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowAnyOrigin()
@@ -39,16 +39,8 @@ namespace GieldaL2.TResultsViewer.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
+            app.UseDeveloperExceptionPage();
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }
