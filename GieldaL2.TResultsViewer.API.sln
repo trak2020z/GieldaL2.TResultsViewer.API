@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GieldaL2.TResultsViewer.API", "GieldaL2.TResultsViewer.API\GieldaL2.TResultsViewer.API.csproj", "{F599EE76-DB6D-43CC-81F5-208B3E4B328C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GieldaL2.TResultsViewer.API", "GieldaL2.TResultsViewer.API\GieldaL2.TResultsViewer.API.csproj", "{F599EE76-DB6D-43CC-81F5-208B3E4B328C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GieldaL2.TResultsViewer.DB", "GieldaL2.TResultsViewer.DB\GieldaL2.TResultsViewer.DB.csproj", "{C0893BDB-9087-4832-8A68-20EFC9BED3B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F599EE76-DB6D-43CC-81F5-208B3E4B328C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F599EE76-DB6D-43CC-81F5-208B3E4B328C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F599EE76-DB6D-43CC-81F5-208B3E4B328C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0893BDB-9087-4832-8A68-20EFC9BED3B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0893BDB-9087-4832-8A68-20EFC9BED3B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0893BDB-9087-4832-8A68-20EFC9BED3B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0893BDB-9087-4832-8A68-20EFC9BED3B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
