@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GieldaL2.TResultsViewer.DB.Models
+namespace GieldaL2.TResultsViewer.API.Models
 {
     public partial class GeneratorLog
     {
