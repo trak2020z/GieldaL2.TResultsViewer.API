@@ -40,6 +40,14 @@ namespace GieldaL2.TResultsViewer.DB.Models
 
                 entity.Property(e => e.ClientId).HasColumnName("client_id");
 
+                entity.Property(e => e.DbDeletesQuantity).HasColumnName("db_deletes_quantity");
+
+                entity.Property(e => e.DbDeletesTime).HasColumnName("db_deletes_time");
+
+                entity.Property(e => e.DbInsertsQuantity).HasColumnName("db_inserts_quantity");
+
+                entity.Property(e => e.DbInsertsTime).HasColumnName("db_inserts_time");
+
                 entity.Property(e => e.DbSelectsQuantity).HasColumnName("db_selects_quantity");
 
                 entity.Property(e => e.DbSelectsTime).HasColumnName("db_selects_time");
