@@ -15,9 +15,9 @@ namespace GieldaL2.TResultsViewer.API.Controllers
     public class GraphController : ControllerBase
     {
         [HttpGet]
-        public GraphsDTO Get()
-        {
-            return GraphService.GetData();
+        public GraphsDTO Get(string DateFrom, string DateTo)
+        {   
+            return GraphService.GetData(DateFrom, DateTo);
         }
     }
 }
