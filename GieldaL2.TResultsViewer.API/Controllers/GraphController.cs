@@ -19,5 +19,11 @@ namespace GieldaL2.TResultsViewer.API.Controllers
         {   
             return GraphService.GetData(DateFrom, DateTo);
         }
+
+        [HttpDelete]
+        public DeleteDTO Delete(string DateFrom, string DateTo)
+        {   
+            return GraphService.ClearData();
+        }
     }
 }

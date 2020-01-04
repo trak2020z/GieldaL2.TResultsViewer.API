@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace GieldaL2.TResultsViewer.DB.Repositories
 {
@@ -25,9 +26,13 @@ namespace GieldaL2.TResultsViewer.DB.Repositories
             if (!string.IsNullOrEmpty(DateTo))
             {
                 DateTime.TryParse(DateTo, out DateTime DateT);
-                query = query.Where(x => x.TestStartTime < DateT.AddDays(1));
+                query = query.Where(x => x.TestStartTime < DateT);
             }
             return query.ToList();
+        }
+        public void Delete()
+        {
+            _context.GeneratorLog.FromSql("DELETE FROM [dbo].[generator_log]").ToList(); ;
         }
     }
 }

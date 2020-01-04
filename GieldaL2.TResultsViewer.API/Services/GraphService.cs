@@ -18,5 +18,26 @@ namespace GieldaL2.TResultsViewer.API.Services
             data.ForEach(x => graphs.Graphs.Add(GraphDTO.FromDB(x)));
             return graphs;
         }
+
+        public static DeleteDTO ClearData()
+        {
+            GraphRepository _repository = new GraphRepository();
+            try
+            {
+                _repository.Delete();
+
+                return new DeleteDTO()
+                {
+                    Success = true
+                };
+            }
+            catch(Exception e)
+            {
+                return new DeleteDTO()
+                {
+                    Success = true
+                };
+            }
+        }
     }
 }
