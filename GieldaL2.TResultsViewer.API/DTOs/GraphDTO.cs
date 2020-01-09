@@ -11,6 +11,7 @@ namespace GieldaL2.TResultsViewer.API.DTOs
         public int ActiveClientsQuantity { get; set; }
         public string TestStartTime { get; set; }
         public string ReqType { get; set; }
+        public int ReqNo { get; set; }
         public int ReqTime { get; set; }
         public string RespType { get; set; }
         public int BackendTime { get; set; }
@@ -28,18 +29,19 @@ namespace GieldaL2.TResultsViewer.API.DTOs
             {
                 ActiveClientsQuantity = model.ActiveClientsQuantity,
                 TestStartTime = model.TestStartTime.ToString(),
-                ReqType=model.ReqType,
-                ReqTime=model.ReqTime,
-                BackendTime=model.BackendTime,
-                DbSelectsQuantity=model.DbSelectsQuantity,
-                DbSelectsTime=model.DbSelectsTime,
-                DbUpdatesQuantity=model.DbUpdatesQuantity,
-                DbUpdatesTime=model.DbUpdatesTime,
-                DbInsertsQuantity=model.DbInsertsQuantity,
-                DbInsertsTime=model.DbInsertsTime,
-                DbDeletesQuantity=model.DbDeletesQuantity,
-                DbDeletesTime=model.DbDeletesTime,
-                RespType=model.RespType
+                ReqType = model.ReqType,
+                ReqNo = model.ReqNo,
+                ReqTime = model.ReqTime,
+                BackendTime = model.BackendTime,
+                DbSelectsQuantity = model.DbSelectsQuantity,
+                DbSelectsTime = model.DbSelectsTime,
+                DbUpdatesQuantity = model.DbUpdatesQuantity,
+                DbUpdatesTime = model.DbUpdatesTime,
+                DbInsertsQuantity = model.DbInsertsQuantity,
+                DbInsertsTime = model.DbInsertsTime,
+                DbDeletesQuantity = model.DbDeletesQuantity,
+                DbDeletesTime = model.DbDeletesTime,
+                RespType = model.RespType
     };
         }
     }
