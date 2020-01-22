@@ -10,18 +10,22 @@ namespace GieldaL2.TResultsViewer.API.Services
 {
     public class GraphService
     {
-        public static GraphsDTO GetData(string DateFrom, string DateTo)
+        private GraphRepository _repository { get; set; }
+        public GraphService(GieldaL2TesterContext context)
         {
-            GraphRepository _repository = new GraphRepository();
+            _repository = new GraphRepository(context);
+        }
+
+        public GraphsDTO GetData(string DateFrom, string DateTo)
+        {
             List<GeneratorLog> data= _repository.Get(DateFrom, DateTo);
             GraphsDTO graphs = new GraphsDTO();
             data.ForEach(x => graphs.Graphs.Add(GraphDTO.FromDB(x)));
             return graphs;
         }
 
-        public static DeleteDTO ClearData()
+        public DeleteDTO ClearData()
         {
-            GraphRepository _repository = new GraphRepository();
             try
             {
                 _repository.Delete();
@@ -35,7 +39,7 @@ namespace GieldaL2.TResultsViewer.API.Services
             {
                 return new DeleteDTO()
                 {
-                    Success = true
+                    Success = false,
                 };
             }
         }
