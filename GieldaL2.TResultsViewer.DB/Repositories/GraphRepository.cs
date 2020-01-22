@@ -10,9 +10,9 @@ namespace GieldaL2.TResultsViewer.DB.Repositories
     public class GraphRepository
     {
         private readonly GieldaL2TesterContext _context;
-        public GraphRepository()
+        public GraphRepository(GieldaL2TesterContext context)
         {
-            _context = new GieldaL2TesterContext();
+            _context = context;
         }
 
         public List<GeneratorLog> Get(string DateFrom, string DateTo)
