@@ -1,31 +1,19 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace GieldaL2.TResultsViewer.DB.Models
 {
     public partial class GieldaL2TesterContext : DbContext
     {
-        public GieldaL2TesterContext()
-        {
-        }
-
         public GieldaL2TesterContext(DbContextOptions<GieldaL2TesterContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<GeneratorLog> GeneratorLog { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=tcp:eventstarterkit.database.windows.net,1433;Database=GieldaL2.Tester;Uid=L2Service;Password=H4@bu2zz;Trusted_Connection=False;Encrypt=True;");
-            }
-        }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<GeneratorLog>(entity =>
